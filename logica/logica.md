@@ -1,8 +1,8 @@
 - Python usando +
-    - Caso você use + entre strings, ele concatena
-    - Se você mistura string e numeros, o python não consegue interpretar
-    - Se você usa o + em números, ele soma
-    - Se você usa o * em números, multiplica, e o mesmo acontece em strings
+  - Caso você use + entre strings, ele concatena
+  - Se você mistura string e numeros, o python não consegue interpretar
+  - Se você usa o + em números, ele soma
+  - Se você usa o \* em números, multiplica, e o mesmo acontece em strings
 
 Uso do f-string:
 
@@ -178,96 +178,107 @@ Diferente do break, que interrompe o laço, o continue para o laço naquele mome
 A diferença entre `continue` e `break` dentro de um loop `while` em Python reside na forma como eles alteram o fluxo de execução do loop:
 
 - **`break`**:Python
-    - Quando o `break` é encontrado dentro de um loop `while`, ele **interrompe completamente** a execução do loop.
-    - O programa sai do loop e continua a execução da primeira instrução que segue o bloco do `while`.
-    - Nenhuma iteração restante do loop é executada.
-    
-    **Exemplo com `break`:**
-    
-    ```python
-    i = 0
-    while i < 5:
-        print(f"Iteração {i}")
-        if i == 2:
-            print("Encontrei o 2, saindo do loop com break.")
-            break  # O loop será interrompido aqui
-        i += 1
-    print("Fora do loop.")
-    ```
-    
-    **Saída:**
-    
-    ```
-    Iteração 0
-    Iteração 1
-    Iteração 2
-    Encontrei o 2, saindo do loop com break.
-    Fora do loop.
-    ```
-    
-    Nesse exemplo, o loop para quando `i` é 2.
-    
+  - Quando o `break` é encontrado dentro de um loop `while`, ele **interrompe completamente** a execução do loop.
+  - O programa sai do loop e continua a execução da primeira instrução que segue o bloco do `while`.
+  - Nenhuma iteração restante do loop é executada.
+  **Exemplo com `break`:**
+  ```python
+  i = 0
+  while i < 5:
+      print(f"Iteração {i}")
+      if i == 2:
+          print("Encontrei o 2, saindo do loop com break.")
+          break  # O loop será interrompido aqui
+      i += 1
+  print("Fora do loop.")
+  ```
+  **Saída:**
+  ```
+  Iteração 0
+  Iteração 1
+  Iteração 2
+  Encontrei o 2, saindo do loop com break.
+  Fora do loop.
+  ```
+  Nesse exemplo, o loop para quando `i` é 2.
 - **`continue`**:Python
-    - Quando o `continue` é encontrado dentro de um loop `while`, ele **pula a iteração atual** do loop.
-    - O restante do código dentro do bloco do `while` para a iteração atual é ignorado.
-    - O controle de execução salta para o início da próxima iteração do loop, reavaliando a condição do `while`.
-    
-    **Exemplo com `continue`:**
-    
-    ```python
-    i = 0
-    while i < 5:
-        i += 1  # É importante incrementar 'i' antes do 'continue' para evitar loop infinito
-        if i == 3:
-            print(f"Pulei a iteração quando i é {i} com continue.")
-            continue  # O restante do código desta iteração será pulado
-        print(f"Processando a iteração {i}")
-    print("Fora do loop.")
-    ```
-    
-    **Saída:**
-    
-    ```
-    Processando a iteração 1
-    Processando a iteração 2
-    Pulei a iteração quando i é 3 com continue.
-    Processando a iteração 4
-    Processando a iteração 5
-    Fora do loop.
-    ```
-    
-    Nesse exemplo, quando `i` é 3, a linha `print(f"Processando a iteração {i}")` é pulada, e o loop continua para a próxima iteração.
-    
+  - Quando o `continue` é encontrado dentro de um loop `while`, ele **pula a iteração atual** do loop.
+  - O restante do código dentro do bloco do `while` para a iteração atual é ignorado.
+  - O controle de execução salta para o início da próxima iteração do loop, reavaliando a condição do `while`.
+  **Exemplo com `continue`:**
+  ```python
+  i = 0
+  while i < 5:
+      i += 1  # É importante incrementar 'i' antes do 'continue' para evitar loop infinito
+      if i == 3:
+          print(f"Pulei a iteração quando i é {i} com continue.")
+          continue  # O restante do código desta iteração será pulado
+      print(f"Processando a iteração {i}")
+  print("Fora do loop.")
+  ```
+  **Saída:**
+  ```
+  Processando a iteração 1
+  Processando a iteração 2
+  Pulei a iteração quando i é 3 com continue.
+  Processando a iteração 4
+  Processando a iteração 5
+  Fora do loop.
+  ```
+  Nesse exemplo, quando `i` é 3, a linha `print(f"Processando a iteração {i}")` é pulada, e o loop continua para a próxima iteração.
 
 **Em resumo:**
 
-- **`break`**: Sai do loop *totalmente*.
-- **`continue`**: Pula a *iteração atual* e continua para a próxima.
-
+- **`break`**: Sai do loop _totalmente_.
+- **`continue`**: Pula a _iteração atual_ e continua para a próxima.
 
 ## While e else
 
-- Sempre que um while tem um break dentro dele, o else fora do while não é 
-executado
+- Sempre que um while tem um break dentro dele, o else fora do while não é
+  executado
 - O roda depois que o while termina sem break
 - Pouco usado (não é um recurso comumente utilizado)
 - Pouco usado no dia a dia, mas aparece em buscas ou validações
 
 🔹 Quando usar?
+
 - Quando quer fazer algo apenas se o laço completou normalmente, sem break.
 - Útil em buscas, autenticações, verificações.
-
 
 ## For x While
 
 - For normalmente é usado quando se sabe ou se tem delimitações na quantidade
-de repetições que precisam acontecer
+  de repetições que precisam acontecer
 - While se usa quando não é possível saber quantas vezes o laço pode acontecer
 
 **Sintaxe do for:**
 
-    
     for letra in texto:
     print(letra)
-    
 
+## Range + for
+
+- Range e for não são codependentes
+- Possui 3 parâmetros: start, end, step
+- Não definir o start deixa pré-definido que começará em 0
+- Step com números negativos tenta ir para trás
+
+**Sintaxe**
+
+    numeros = range(0, 100, 2)
+
+    for numero in numeros:
+        print(numero)
+
+## Funcionamento do for
+
+- Iterável -> str, range, etc
+- Iterador -> quem sabe entregar um valor por vez
+- next -> me entregue o próximo valor
+- iter -> me entregue seu iterador
+
+- Método = ação que será chamada para um objeto
+
+- **iter**() ou iter() (traz o iterador - seu id na memória)
+- **next**() ou next(traz o próximo valor)
+- Quando todos os valores são iterados, um erro é apresentado (StopIteration)
