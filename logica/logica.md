@@ -256,3 +256,18 @@ executado
 🔹 Quando usar?
 - Quando quer fazer algo apenas se o laço completou normalmente, sem break.
 - Útil em buscas, autenticações, verificações.
+
+
+## For x While
+
+- For normalmente é usado quando se sabe ou se tem delimitações na quantidade
+de repetições que precisam acontecer
+- While se usa quando não é possível saber quantas vezes o laço pode acontecer
+
+**Sintaxe do for:**
+
+    
+    for letra in texto:
+    print(letra)
+    
+
