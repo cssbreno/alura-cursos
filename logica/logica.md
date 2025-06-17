@@ -243,3 +243,16 @@ A diferença entre `continue` e `break` dentro de um loop `while` em Python resi
 
 - **`break`**: Sai do loop *totalmente*.
 - **`continue`**: Pula a *iteração atual* e continua para a próxima.
+
+
+## While e else
+
+- Sempre que um while tem um break dentro dele, o else fora do while não é 
+executado
+- O roda depois que o while termina sem break
+- Pouco usado (não é um recurso comumente utilizado)
+- Pouco usado no dia a dia, mas aparece em buscas ou validações
+
+🔹 Quando usar?
+- Quando quer fazer algo apenas se o laço completou normalmente, sem break.
+- Útil em buscas, autenticações, verificações.
