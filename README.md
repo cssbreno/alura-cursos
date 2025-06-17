@@ -20,7 +20,7 @@ estudos-python/
 │   ├── jogo_adivinhacao.py
 │   └── agenda_contatos.py
 └── README.md
-
+```
 ---
 
 ## 🧠 Conteúdos Estudados
@@ -53,6 +53,6 @@ Este repositório funciona como meu diário de estudos em Python. É também uma
 
 ## 🧑‍💻 Autor
 
-[Breno Silva](https://github.com/cssbreno)
+[Breno Soares](https://github.com/cssbreno)
 
 ---
