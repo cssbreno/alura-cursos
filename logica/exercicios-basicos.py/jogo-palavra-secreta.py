@@ -9,6 +9,7 @@ if iniciar_jogo is True:
     palavra_oculta = ['*' for _ in palavra_secreta]
     print('A palavra secreta é: ' + ''.join(palavra_oculta))
 
+    letras_acertadas = ''
 
     while True:
         
@@ -19,15 +20,13 @@ if iniciar_jogo is True:
             print('Digite apenas uma letra.')
             continue
 
-        if '*' not in palavra_oculta:
-            print('Você descobriu a palavra')
-            break
-        
+        if chute_do_usuario in palavra_secreta:
+            letras_acertadas += chute_do_usuario
 
-        for i,letra in enumerate(palavra_secreta):
-            if chute_do_usuario == letra.lower():
-                palavra_oculta[i] = letra
-                print('A palavra secreta é: ' + ''.join(palavra_oculta))
-        continue
+        for letra_secreta in palavra_secreta:
+            if letra_secreta in letras_acertadas:
+                print(letra_secreta)
+            else:
+                print('*')
 else:
     print('Tudo bem, até a próxima!')
