@@ -1,3 +1,5 @@
+import os
+
 iniciar_jogo = input('Vamos jogar? (S)im / (N)ão: ').lower().startswith("s")
 
 palavra_secreta = 'Respeito'.lower()
@@ -13,6 +15,7 @@ if iniciar_jogo is True:
     letras_acertadas = ''
 
     while True:
+
         
         chute_do_usuario = input('Digite uma letra: ').lower()
         numero_tentativas += 1
@@ -36,7 +39,9 @@ if iniciar_jogo is True:
         print('Palavra formada: ', palavra_completa)
 
         if palavra_completa == palavra_secreta:
+            os.system('clear')
             print('Você ganhou! 🏆')
             print(f'Número de tentativas: {numero_tentativas}')
+            break
 else:
     print('Tudo bem, até a próxima!')
