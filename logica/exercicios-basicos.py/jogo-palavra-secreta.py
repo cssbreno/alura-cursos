@@ -48,4 +48,3 @@ elif iniciar_jogo.startswith('n') is True:
 
 else:
     print('Você não digitou uma resposta válida')
-    iniciar_jogo
