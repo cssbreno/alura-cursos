@@ -2,22 +2,31 @@ iniciar_jogo = input('Vamos jogar? (S)im / (N)ão: ').lower().startswith("s")
 
 palavra_secreta = 'Python'
 
-try:
-    if iniciar_jogo is True:
-        print('No jogo, você deve tentar adivinhar a palavra secreta.\
-            Vamos lá!')
-        print('------------------------')
-        
-        palavra_oculta = ['*' for _ in palavra_secreta]
-        print('A palavra secreta é: ' + ''.join(palavra_oculta))
+if iniciar_jogo is True:
+    print('No jogo, você deve tentar adivinhar a palavra secreta. Vamos lá!')
+    print('------------------------')
+    
+    palavra_oculta = ['*' for _ in palavra_secreta]
+    print('A palavra secreta é: ' + ''.join(palavra_oculta))
 
-        while True:
-            chute_do_usuario = input('Digite uma letra: ').lower()
-            for i,letra in enumerate(palavra_secreta):
-                if chute_do_usuario == letra.lower():
-                    palavra_oculta[i] = letra
-                    print('A palavra secreta é: ' + ''.join(palavra_oculta))
+    letras_acertadas = ''
+
+    while True:
+        
+        chute_do_usuario = input('Digite uma letra: ').lower()
+
+        ## Valida quantidade de letras digitadas
+        if len(chute_do_usuario) > 1:
+            print('Digite apenas uma letra.')
             continue
 
-except ValueError:
-    print('Tudo bem. Até a próxima!')
+        if chute_do_usuario in palavra_secreta:
+            letras_acertadas += chute_do_usuario
+
+        for letra_secreta in palavra_secreta:
+            if letra_secreta in letras_acertadas:
+                print(letra_secreta)
+            else:
+                print('*')
+else:
+    print('Tudo bem, até a próxima!')
