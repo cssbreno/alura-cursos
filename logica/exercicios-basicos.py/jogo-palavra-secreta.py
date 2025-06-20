@@ -4,12 +4,12 @@ palavra_secreta = 'Python'
 
 try:
     if iniciar_jogo is True:
-        print('No jogo, você deve tentar adivinhar a palavra secreta. Vamos lá!')
+        print('No jogo, você deve tentar adivinhar a palavra secreta.\
+            Vamos lá!')
         print('------------------------')
         
         palavra_oculta = ['*' for _ in palavra_secreta]
         print('A palavra secreta é: ' + ''.join(palavra_oculta))
-
 
         while True:
             chute_do_usuario = input('Digite uma letra: ').lower()
