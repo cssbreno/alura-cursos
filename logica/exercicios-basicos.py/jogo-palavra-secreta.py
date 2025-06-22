@@ -8,7 +8,8 @@ if iniciar_jogo.startswith('s') is True:
     numero_tentativas = 0
 
     if iniciar_jogo is True:
-        print('No jogo, você deve tentar adivinhar a palavra secreta. Vamos lá!')
+        print('No jogo, você deve tentar adivinhar a palavra secreta. '
+              'Vamos lá!')
         print('------------------------')
         
         palavra_oculta = ['*' for _ in palavra_secreta]
