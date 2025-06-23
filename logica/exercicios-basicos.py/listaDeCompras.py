@@ -1,19 +1,29 @@
 import os
 
 mensagem = 'Sua lista está vazia. Adicione itens nela: '
-lista_De_Compras = [input(mensagem)]
-print(lista_De_Compras)
+lista_De_Compras = []
+
+print(mensagem)
+itens_iniciais = input('Digite os itens (separados por vírgula): ')
+# Separa os itens por vírgula e remove espaços em branco
+itens_separados = [item.strip() for item in itens_iniciais.split(',')]
+lista_De_Compras.extend(itens_separados)
+
+print('Lista inicial:', lista_De_Compras)
 
 while True:
     opcao = input('O que deseja fazer: '
                   '[1] - Adicionar item'
                   ', [2] - Remover item'
                   ', [3] - Listar compras: ')
+
     if opcao == '1':
         os.system('clear')
-        objeto = input('Informe o item a ser adicionado: ')
-        lista_De_Compras.append(objeto)
-        print('Item adicionado na lista', lista_De_Compras)
+        novos_itens = input('Digite os itens (separados por vírgula): ')
+        # Separa os itens por vírgula e remove espaços em branco
+        itens_separados = [item.strip() for item in novos_itens.split(',')]
+        lista_De_Compras.extend(itens_separados)
+        print('Itens adicionados na lista:', lista_De_Compras)
 
     elif opcao == '2':
         indice = int(input('Informe o numero do item na lista: '))
