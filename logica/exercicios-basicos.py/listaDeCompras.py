@@ -9,7 +9,6 @@ while True:
                   '[1] - Adicionar item'
                   ', [2] - Remover item'
                   ', [3] - Listar compras: ')
-    
     if opcao == '1':
         os.system('clear')
         objeto = input('Informe o item a ser adicionado: ')
@@ -26,8 +25,20 @@ while True:
         except IndexError:
             print('Não foi possivel apagar o item informado')
 
+        except ValueError:
+            print('Item não está presente na lista')
+
+        except Exception:
+            print('Verifique e tente novamente')
+
     elif opcao == '3':
-        print('Sua lista de compras é: ', lista_De_Compras)
+        if len(lista_De_Compras) <= 0:
+            print('Lista vazia')
+        else:
+            print('Sua lista de compras é:')
+
+            for item, nome in enumerate(lista_De_Compras):
+                print(f'{item} - {nome}')
 
     else:
         print('Você não digitou uma opção válida!')
